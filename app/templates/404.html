@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- Address complete -->
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+
+    <script type="text/javascript">
+      function initialize() {
+      var inputstart = document.getElementById('searchTextFieldStart');
+      var inputdest = document.getElementById('searchTextFieldDest');
+      var options = {componentRestrictions: {country: 'us'}};
+                 
+      new google.maps.places.Autocomplete(inputstart, options);
+      new google.maps.places.Autocomplete(inputdest, options);
+      }
+             
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://www.ridesmoothly.us">RideSmoothly</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="https://docs.google.com/presentation/d/1vkmdblAi6xkwvYivFgRAhlQ3u-olhiixvNxeWOQdtIQ/edit?usp=sharing"target="_blank">About RideSmoothly</a></li>
+            <li><a href="http://icecube.umd.edu/~hellauer/pub"target="_blank">About Me</a></li>
+            <li><a href="http://linkedin.com/in/rehiii"target="_blank">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+<br><br>
+
+<style type="text/css">
+<!--body{background-image:url('/static/images/greg3.jpg');background-size:100% 100%; background-position:left bottom;}-->
+
+
+<!--body{background-image:url('/static/images/greg3.jpg') ;background-attachment: fixed;
+    background-position: center; }-->
+
+body{background-image:url('/static/asphalt_bgd.jpg') ;background-size:100% 100%;
+    background-position: center; font-family: "Ubuntu", Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;}
+
+.custom_bg {
+  /*background-color: #F0F0F0;*/
+  background-color: rgba(240, 240, 240, .9);
+
+  border-radius:20px;
+  /*opacity: .4*/;
+}
+
+.side_margin {
+  margin-left: 28px;
+}
+
+.bit_of_padding {
+  padding: 30px;
+}
+
+</style>
+
+        <div class="alert alert-danger">
+            <strong>404 error!</a></strong>  The web address you entered does not exist on the smooth server.
+        </div>
+        </div>
+
+    <div class="container">
+
+      <div class="starter-template">
+	<h1><font color="orange">Find Your Smoothest Route!</font></h1>
+	<p><font size="5" color="white">Enter your Start and Destination addresses</font></p>
+	<p><font size="4" color="white">(currently, addresses must be in Baltimore City)</font></p>
+      </div>
+
+      <!-- <div class = "container"> -->
+
+      <!-- 	<form action="/output" method="GET"> -->
+      <!-- 	  <div class="form-group"> -->
+      <!-- 	    <label for="ID"><font size="4" color="orange">Start Address:</font></label> -->
+      <!-- 	    <input type="text" id="start" name="start" placeholder="e.g. 1234 Sesame Street, Baltimore, MD 21117"> -->
+      <!-- 	  </div> -->
+      <!-- 	   <div class="form-group"> -->
+      <!-- 	    <label for="ID"><font size="4" color="orange">Destination Address:</font></label> -->
+      <!-- 	    <input type="text" id="dest" name="dest" placeholder="e.g. 5678 Yellow Brick Road, Baltimore, MD 21117"> -->
+      <!-- 	  </div> -->
+
+      <!-- 	  <div> -->
+      <!-- 	    <button type="submit" class="btn btn-default btn-lg">Map my smoothest route!</button> -->
+      <!-- 	  </div> -->
+
+      <!-- 	</form> -->
+      <!-- </div> -->
+
+	<form action="/output" method="GET">
+	  <div class="form-group">
+	    <label for="searchTextFieldStart"><font size="4" color="orange">Start Address:</font></label>
+	    <input type="text" id="searchTextFieldStart" name="start" placeholder="e.g. 1234 Sesame Street, Baltimore, MD 21117">
+	  </div>
+	  <div class="form-group">
+	    <label for="searchTextFieldDest"><font size="4" color="orange">Destination Address:</font></label>
+	    <input type="text" id="searchTextFieldDest" name="dest" placeholder="e.g. 1234 Sesame Street, Baltimore, MD 21117">
+	  </div>
+	  <div>
+	    <button type="submit" class="btn btn-default btn-lg">Map my smoothest route!</button>
+	  </div>
+
+	</form>
+      </div>
+
+    <br>
+
+      <div class = "container">
+
+      <h2><font color="orange">Or just start with the map.</font></h2>
+
+      <br>
+
+	<form action="/output" method="GET">
+
+	  <div>
+	    <button type="submit" class="btn btn-default btn-lg">Show me the map!</button>
+	  </div>
+
+	</form>
+      </div>
+
+
+
+      <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+      <script src="static/js/bootstrap.min.js"></script>
+
+    </div> <!-- /.container-->
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
